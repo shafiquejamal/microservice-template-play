@@ -12,7 +12,6 @@ class SomeMessageSubscriber @Inject()(
   extends RabbitMQPublisherSubscriber {
 
   override val exchange: String = "some-exchange-name"
-  override val queueName: String = "some-que-name"
   override val routingActor: ActorRef = actorSystem.actorOf(RoutingActor.props, "MessageRouter")
   override val convert: (String) => Option[MessageBrokerMessageType] = ???
 

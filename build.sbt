@@ -1,4 +1,4 @@
-name := """microservice-template"""
+name := """microservice-template-play"""
 
 version := "0.0.1"
 
