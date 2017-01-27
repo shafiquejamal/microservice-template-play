@@ -3,7 +3,7 @@ package plumbing.messagebroker
 import akka.actor.{Actor, ActorLogging, Props}
 import com.eigenroute.plumbing.MessageBrokerMessage
 
-class RoutingActor extends Actor with ActorLogging {
+class MessageBrokerMessageDispatcher extends Actor with ActorLogging {
 
   override def receive = {
 
@@ -16,8 +16,8 @@ class RoutingActor extends Actor with ActorLogging {
 
 }
 
-object RoutingActor {
+object MessageBrokerMessageDispatcher {
 
-  def props = Props(new RoutingActor())
+  def props = Props(new MessageBrokerMessageDispatcher())
 
 }

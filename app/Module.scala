@@ -5,7 +5,7 @@ import com.eigenroute.scalikejdbchelpers.{DBConfig, ScalikeJDBCDevProdDBConfig, 
 import com.eigenroute.time.{TimeProvider, TimeProviderImpl}
 import com.google.inject.AbstractModule
 import net.codingwell.scalaguice.ScalaModule
-import plumbing.messagebroker.SomeMessageSubscriber
+import plumbing.messagebroker.MessageBrokerMessageSubscriber
 
 /**
   * This class is a Guice module that tells Guice how to bind several
@@ -29,7 +29,7 @@ class Module extends AbstractModule with ScalaModule {
     // bind[DAO].to[DAOImpl]
     bind[ScalikeJDBCSessionProvider].to[ScalikeJDBCSessionProviderImpl]
     bind[DBConfig].to[ScalikeJDBCDevProdDBConfig]
-    bind[PublisherSubscriber].to[SomeMessageSubscriber]
+    bind[PublisherSubscriber].to[MessageBrokerMessageSubscriber]
   }
 
 }
